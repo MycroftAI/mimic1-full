@@ -7,3 +7,6 @@
 [submodule "mimic-cmu_us_slt"]
 	path = mimic-cmu_us_slt
 	url = https://github.com/zeehio/mimic-cmu_us_slt.git
+[submodule "mimic-vid_gb_ap"]
+	path = mimic-vid_gb_ap
+	url = https://github.com/zeehio/mimic-vid_gb_ap.git

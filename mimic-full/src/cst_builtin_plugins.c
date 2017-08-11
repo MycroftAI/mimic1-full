@@ -38,6 +38,7 @@
 #include "mimic_core_config.h"
 #include "mimic_english_config.h"
 #include "mimic_cmu_us_slt_config.h"
+//#include "mimic_vid_gb_ap_config.h"
 #include "mimic.h"
 
 #include "usenglish.h"
@@ -80,10 +81,7 @@
 #include "cmu_us_slt_hts.h"
 #endif
 
-#if defined(ENABLE_VID_GB_AP_BUILTIN)
-#include "vid_gb_ap.h"
-#endif
-
+//#include "vid_gb_ap.h"
 
 int mimic_builtin_plugins_init()
 {
@@ -116,9 +114,7 @@ int mimic_builtin_plugins_init()
   #if defined(ENABLE_CMU_US_SLT_HTS_BUILTIN)
    voice_cmu_us_slt_hts_plugin_init();
   #endif
-  #if defined(ENABLE_VID_GB_AP_BUILTIN)
-   voice_vid_gb_ap_plugin_init();
-  #endif
+   //voice_vid_gb_ap_plugin_init();
   return 0;
 }
 
@@ -133,9 +129,7 @@ void mimic_builtin_plugins_exit()
   #if defined(ENABLE_CMU_US_SLT_HTS_BUILTIN)
    voice_cmu_us_slt_hts_plugin_exit();
   #endif
-  #if defined(ENABLE_VID_GB_AP_BUILTIN)
-   voice_vid_gb_ap_plugin_exit();
-  #endif
+   //voice_vid_gb_ap_plugin_exit();
   #if defined(ENABLE_CMU_US_KAL16_BUILTIN)
    voice_cmu_us_kal16_plugin_exit();
   #endif

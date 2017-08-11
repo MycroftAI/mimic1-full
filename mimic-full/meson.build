@@ -2,11 +2,16 @@ project('mimic-full', 'c', default_options : ['c_std=c99'], version: '2.0.0')
 
 c_compiler = meson.get_compiler('c')
 
-mimic_core = dependency('ttsmimiccore')
-mimic_english = dependency('ttsmimicenglish')
-mimic_cmu_us_slt = dependency('ttsmimic_cmu_us_slt')
+mimic_core = dependency('ttsmimic_core')
+mimic_full_deps = [mimic_core]
 
-mimic_full_deps = [mimic_core, mimic_english, mimic_cmu_us_slt]
+foreach lang : ['english']
+  mimic_full_deps += dependency('ttsmimic_' + lang)
+endforeach
+
+foreach voice : ['cmu_us_slt'] # 'vid_gb_ap']
+  mimic_full_deps += dependency('ttsmimic_' + voice)
+endforeach
 
 includes = [
   include_directories('include')
