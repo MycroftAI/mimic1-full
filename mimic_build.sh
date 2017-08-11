@@ -19,6 +19,11 @@ build_component() {
 which dpkg-architecture >/dev/null 2>&1 && export PKG_CONFIG_PATH="${PKG_CONFIG_PATH}:${INSTALL_DIR}/lib/"`dpkg-architecture -qDEB_HOST_MULTIARCH`"/pkgconfig"
 export PKG_CONFIG_PATH="${PKG_CONFIG_PATH}:${INSTALL_DIR}/lib/pkgconfig"
 
+# Set LD_LIBRARY_PATH for tests:
+which dpkg-architecture >/dev/null 2>&1 && export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${INSTALL_DIR}/lib/"`dpkg-architecture -qDEB_HOST_MULTIARCH`
+export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${INSTALL_DIR}/lib"
+
+
 # Build dependencies: (libpcre2-8)
 export WORKDIR="${BUILD_DIR}"
 "${SOURCE_DIR}/mimic-core/dependencies.sh" --prefix="${INSTALL_DIR}" || exit 1

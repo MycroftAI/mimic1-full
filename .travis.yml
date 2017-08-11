@@ -10,7 +10,7 @@ matrix:
 
 install:
   - export PATH="`pwd`/build:${PATH}"
-  - if [[ "$TRAVIS_OS_NAME" == "osx"  ]]; then rvm get stable; brew update && brew install python3 ninja pkg-config; echo "done"; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx"  ]]; then rvm get stable; brew update && brew install python3 ninja pkg-config pcre2 portaudio; echo "done"; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then wget https://github.com/ninja-build/ninja/releases/download/v1.7.2/ninja-linux.zip && unzip -q ninja-linux.zip -d build; fi
   - pip3 install meson
 
@@ -23,4 +23,5 @@ addons:
     - pkg-config
     - python3
     - python3-pip
+    - libasound2-dev
 
