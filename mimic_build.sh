@@ -1,8 +1,8 @@
 #!/bin/sh
 
 SOURCE_DIR="$PWD/"
-BUILD_DIR="$PWD/build_meson/"
-INSTALL_DIR="$PWD/install_meson/"
+BUILD_DIR="$PWD/build/"
+INSTALL_DIR="$PWD/install/"
 
 build_component() {
   COMPONENT="$1"
@@ -28,6 +28,7 @@ export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${INSTALL_DIR}/lib"
 # Build mimic components:
 build_component "mimic-core"
 build_component "mimic-english"
+build_component "mimic-indic"
 build_component "mimic-cmu_us_slt"
 build_component "mimic-vid_gb_ap"
 build_component "mimic-full"

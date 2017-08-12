@@ -10,3 +10,6 @@
 [submodule "mimic-vid_gb_ap"]
 	path = mimic-vid_gb_ap
 	url = https://github.com/zeehio/mimic-vid_gb_ap.git
+[submodule "mimic-indic"]
+	path = mimic-indic
+	url = https://github.com/zeehio/mimic-indic.git
