@@ -37,10 +37,6 @@ which dpkg-architecture >/dev/null 2>&1 && export LD_LIBRARY_PATH="${LD_LIBRARY_
 export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${INSTALL_DIR}/lib"
 
 
-# Build dependencies: (libpcre2-8)
-export WORKDIR="${BUILD_DIR}"
-"${SOURCE_DIR}/mimic-core/dependencies.sh" --prefix="${INSTALL_DIR}" || exit 1
-
 # Build mimic components:
 build_component "mimic-core"
 build_component "mimic-english"
