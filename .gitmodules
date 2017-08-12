@@ -13,3 +13,6 @@
 [submodule "mimic-indic"]
 	path = mimic-indic
 	url = https://github.com/zeehio/mimic-indic.git
+[submodule "mimic-grapheme"]
+	path = mimic-grapheme
+	url = https://github.com/zeehio/mimic-grapheme.git
