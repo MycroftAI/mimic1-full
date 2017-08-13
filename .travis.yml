@@ -9,7 +9,7 @@ matrix:
       before_install: rvm get stable
       install:
         - brew update
-        - brew install python3 ninja pkg-config pcre2 portaudio
+        - brew install python3 ninja pkg-config pcre2 portaudio; echo "done"
         - pip3 install meson
     - env: TASK="linux"
       os: linux
