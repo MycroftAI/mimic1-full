@@ -3,10 +3,21 @@ sudo: false
 
 matrix:
   include:
-  - os: osx
-    compiler: clang
-  - os: linux
-    dist: "trusty"
+    - env: TASK="osx"
+      os: osx
+      compiler: clang
+      before_install: rvm get stable
+      install:
+        - brew update
+        - brew install python3 ninja pkg-config pcre2 portaudio
+        - pip3 install meson
+    - env: TASK="linux"
+      os: linux
+      dist: "trusty"
+      install: 
+        - wget https://github.com/ninja-build/ninja/releases/download/v1.7.2/ninja-linux.zip && unzip -q ninja-linux.zip
+        - pip3 install meson
+      addons: {apt: {packages: [libasound2-dev, python3-pip, pkg-config]}}
 
 # We don't want to pull submodules recursively
 git:
@@ -15,21 +26,7 @@ git:
 before_install:
   - git submodule update --init
 
-install:
-  - export PATH="`pwd`/build:${PATH}"
-  - if [[ "$TRAVIS_OS_NAME" == "osx"  ]]; then rvm get stable; brew update && brew install python3 ninja pkg-config pcre2 portaudio; echo "done"; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then wget https://github.com/ninja-build/ninja/releases/download/v1.7.2/ninja-linux.zip && unzip -q ninja-linux.zip -d build; fi
-  - pip3 install meson
-
 script:
   - meson build --prefix="$PWD/install"
   - ninja -C build test install
-
-addons:
-  apt:
-    packages:
-    - pkg-config
-    - python3
-    - python3-pip
-    - libasound2-dev
 
