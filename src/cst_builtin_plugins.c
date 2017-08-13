@@ -37,119 +37,55 @@
 
 #include "mimic_core_config.h"
 #include "mimic_english_config.h"
+#include "mimic_indic_config.h"
+#include "mimic_grapheme_config.h"
+#include "mimic_cmu_time_awb_config.h"
 #include "mimic_cmu_us_slt_config.h"
-//#include "mimic_vid_gb_ap_config.h"
+#include "mimic_vid_gb_ap_config.h"
 #include "mimic.h"
 
 #include "usenglish.h"
-
-#if defined(ENABLE_LANG_INDIC_BUILTIN)
 #include "cmu_indic_lang.h"
-#endif
-
-#if defined(ENABLE_LANG_GRAPHEME_BUILTIN)
 #include "cmu_grapheme_lang.h"
-#endif
-
-#if defined(ENABLE_LANG_ES_BUILTIN)
-#include "es_lang.h"
-#endif
-
 #include "cmu_us_slt.h"
-
-#if defined(ENABLE_CMU_TIME_AWB_BUILTIN)
 #include "cmu_time_awb.h"
-#endif
+//#include "cmu_us_kal.h"
+//#include "cmu_us_kal16.h"
+//#include "cmu_us_awb.h"
+//#include "cmu_us_rms.h"
+//#include "cmu_us_slt_hts.h"
 
-#if defined(ENABLE_CMU_US_KAL_BUILTIN)
-#include "cmu_us_kal.h"
-#endif
-
-#if defined(ENABLE_CMU_US_KAL16_BUILTIN)
-#include "cmu_us_kal16.h"
-#endif
-
-#if defined(ENABLE_CMU_US_AWB_BUILTIN)
-#include "cmu_us_awb.h"
-#endif
-
-#if defined(ENABLE_CMU_US_RMS_BUILTIN)
-#include "cmu_us_rms.h"
-#endif
-
-#if defined(ENABLE_CMU_US_SLT_HTS_BUILTIN)
-#include "cmu_us_slt_hts.h"
-#endif
-
-//#include "vid_gb_ap.h"
+#include "vid_gb_ap.h"
 
 int mimic_builtin_plugins_init()
 {
-   usenglish_plugin_init();
-  #if defined(ENABLE_LANG_INDIC_BUILTIN)
-   indic_plugin_init();
-  #endif
-  #if defined(ENABLE_LANG_GRAPHEME_BUILTIN)
-   grapheme_plugin_init();
-  #endif
-  #if defined(ENABLE_LANG_ES_BUILTIN)
-   es_plugin_init();
-  #endif
-   voice_cmu_us_slt_plugin_init();
-  #if defined(ENABLE_CMU_TIME_AWB_BUILTIN)
-   voice_cmu_time_awb_plugin_init();
-  #endif
-  #if defined(ENABLE_CMU_US_KAL_BUILTIN)
-   voice_cmu_us_kal_plugin_init();
-  #endif
-  #if defined(ENABLE_CMU_US_KAL16_BUILTIN)
-   voice_cmu_us_kal16_plugin_init();
-  #endif
-  #if defined(ENABLE_CMU_US_AWB_BUILTIN)
-   voice_cmu_us_awb_plugin_init();
-  #endif
-  #if defined(ENABLE_CMU_US_RMS_BUILTIN)
-   voice_cmu_us_rms_plugin_init();
-  #endif
-  #if defined(ENABLE_CMU_US_SLT_HTS_BUILTIN)
-   voice_cmu_us_slt_hts_plugin_init();
-  #endif
-   //voice_vid_gb_ap_plugin_init();
+  usenglish_plugin_init();
+  indic_plugin_init();
+  grapheme_plugin_init();
+  voice_cmu_us_slt_plugin_init();
+  voice_cmu_time_awb_plugin_init();
+  //voice_cmu_us_kal_plugin_init();
+  //voice_cmu_us_kal16_plugin_init();
+  //voice_cmu_us_awb_plugin_init();
+  //voice_cmu_us_rms_plugin_init();
+  //voice_cmu_us_slt_hts_plugin_init();
+  voice_vid_gb_ap_plugin_init();
   return 0;
 }
 
 void mimic_builtin_plugins_exit()
 {
-  #if defined(ENABLE_CMU_US_AWB_BUILTIN)
-   voice_cmu_us_awb_plugin_exit();
-  #endif
-  #if defined(ENABLE_CMU_US_RMS_BUILTIN)
-   voice_cmu_us_rms_plugin_exit();
-  #endif
-  #if defined(ENABLE_CMU_US_SLT_HTS_BUILTIN)
-   voice_cmu_us_slt_hts_plugin_exit();
-  #endif
-   //voice_vid_gb_ap_plugin_exit();
-  #if defined(ENABLE_CMU_US_KAL16_BUILTIN)
-   voice_cmu_us_kal16_plugin_exit();
-  #endif
-  #if defined(ENABLE_CMU_US_KAL_BUILTIN)
-   voice_cmu_us_kal_plugin_exit();
-  #endif
-  #if defined(ENABLE_CMU_TIME_AWB_BUILTIN)
-   voice_cmu_time_awb_plugin_exit();
-  #endif
-   voice_cmu_us_slt_plugin_exit();
-  #if defined(ENABLE_LANG_ES_BUILTIN)
-   es_plugin_exit();
-  #endif
-  #if defined(ENABLE_LANG_GRAPHEME_BUILTIN)
-   grapheme_plugin_exit();
-  #endif
-  #if defined(ENABLE_LANG_INDIC_BUILTIN)
-   indic_plugin_exit();
-  #endif
-   usenglish_plugin_exit();
+  //voice_cmu_us_awb_plugin_exit();
+  //voice_cmu_us_rms_plugin_exit();
+  //voice_cmu_us_slt_hts_plugin_exit();
+  voice_vid_gb_ap_plugin_exit();
+  //voice_cmu_us_kal16_plugin_exit();
+  //voice_cmu_us_kal_plugin_exit();
+  voice_cmu_time_awb_plugin_exit();
+  voice_cmu_us_slt_plugin_exit();
+  grapheme_plugin_exit();
+  indic_plugin_exit();
+  usenglish_plugin_exit();
   return;
 }
 

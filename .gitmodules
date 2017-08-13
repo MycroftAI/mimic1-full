@@ -16,3 +16,6 @@
 [submodule "mimic-grapheme"]
 	path = subprojects/mimic-grapheme
 	url = https://github.com/zeehio/mimic-grapheme.git
+[submodule "subprojects/mimic-cmu_time_awb"]
+	path = subprojects/mimic-cmu_time_awb
+	url = https://github.com/zeehio/mimic-cmu_time_awb.git
