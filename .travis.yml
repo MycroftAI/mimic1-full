@@ -19,6 +19,17 @@ matrix:
         - wget https://github.com/ninja-build/ninja/releases/download/v1.7.2/ninja-linux.zip && unzip -q ninja-linux.zip -d build
         - pip3 install meson
       addons: {apt: {packages: [libasound2-dev, python3-pip, pkg-config]}}
+    - env: TASK="windows"
+      os: linux
+      dist: "trusty"
+      install:
+        - export PATH="`pwd`/build:${PATH}"
+        - wget https://github.com/ninja-build/ninja/releases/download/v1.7.2/ninja-linux.zip && unzip -q ninja-linux.zip -d build
+        - pip3 install meson
+      script:
+        - meson build --prefix="$PWD/install" --cross-file="subprojects/mimic-core/cross/ubuntu-mingw64.txt"
+        - ninja -C build install
+      addons: {apt: {packages: [python3-pip, pkg-config, wine, binutils-mingw-w64-x86-64, mingw-w64-x86-64-dev, gcc-mingw-x86-64-i686]}}
 
 # We don't want to pull submodules recursively
 git:
