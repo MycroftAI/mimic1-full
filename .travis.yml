@@ -11,6 +11,17 @@ matrix:
         - brew update
         - brew install python3 ninja pkg-config pcre2 portaudio; echo "done"
         - pip3 install meson
+    - env: TASK="ios"
+      os: osx
+      compiler: clang
+      before_install: rvm get stable
+      install:
+        - brew update
+        - brew install python3 ninja pkg-config; echo "done"
+        - pip3 install meson
+      script:
+        - meson build --prefix="$PWD/install" --cross-file="subprojects/mimic-core/cross/iphone.txt"
+        - ninja -C build install
     - env: TASK="linux"
       os: linux
       dist: "trusty"
