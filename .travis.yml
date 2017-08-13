@@ -8,6 +8,13 @@ matrix:
   - os: linux
     dist: "trusty"
 
+# We don't want to pull submodules recursively
+git:
+  submodules: false
+
+before_install:
+  - git submodule update --init
+
 install:
   - export PATH="`pwd`/build:${PATH}"
   - if [[ "$TRAVIS_OS_NAME" == "osx"  ]]; then rvm get stable; brew update && brew install python3 ninja pkg-config pcre2 portaudio; echo "done"; fi
