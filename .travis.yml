@@ -15,7 +15,8 @@ install:
   - pip3 install meson
 
 script:
-  - ./mimic_build.sh
+  - meson build --prefix="$PWD/install"
+  - ninja -C build test install
 
 addons:
   apt:

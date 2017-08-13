@@ -1,18 +1,18 @@
 [submodule "mimic-core"]
-	path = mimic-core
+	path = subprojects/mimic-core
 	url = https://github.com/zeehio/mimic-core.git
 [submodule "mimic-english"]
-	path = mimic-english
+	path = subprojects/mimic-english
 	url = https://github.com/zeehio/mimic-english.git
 [submodule "mimic-cmu_us_slt"]
-	path = mimic-cmu_us_slt
+	path = subprojects/mimic-cmu_us_slt
 	url = https://github.com/zeehio/mimic-cmu_us_slt.git
 [submodule "mimic-vid_gb_ap"]
-	path = mimic-vid_gb_ap
+	path = subprojects/mimic-vid_gb_ap
 	url = https://github.com/zeehio/mimic-vid_gb_ap.git
 [submodule "mimic-indic"]
-	path = mimic-indic
+	path = subprojects/mimic-indic
 	url = https://github.com/zeehio/mimic-indic.git
 [submodule "mimic-grapheme"]
-	path = mimic-grapheme
+	path = subprojects/mimic-grapheme
 	url = https://github.com/zeehio/mimic-grapheme.git
