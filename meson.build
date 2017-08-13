@@ -20,7 +20,8 @@ foreach mimic_module : mimic_modules
 endforeach
 
 mimic_voices = ['cmu_us_slt', 'vid_gb_ap', 'cmu_time_awb',
-                'cmu_us_awb', 'cmu_us_kal', 'cmu_us_kal16']
+                'cmu_us_awb', 'cmu_us_kal', 'cmu_us_kal16',
+                'cmu_us_rms', 'cmu_us_slt_hts']
 
 foreach mimic_voice : mimic_voices
   dep = dependency('ttsmimic_' + mimic_voice, required: false)

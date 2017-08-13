@@ -52,8 +52,8 @@
 #include "cmu_us_kal.h"
 #include "cmu_us_kal16.h"
 #include "cmu_us_awb.h"
-//#include "cmu_us_rms.h"
-//#include "cmu_us_slt_hts.h"
+#include "cmu_us_rms.h"
+#include "cmu_us_slt_hts.h"
 
 #include "vid_gb_ap.h"
 
@@ -67,8 +67,8 @@ int mimic_builtin_plugins_init()
   voice_cmu_us_kal_plugin_init();
   voice_cmu_us_kal16_plugin_init();
   voice_cmu_us_awb_plugin_init();
-  //voice_cmu_us_rms_plugin_init();
-  //voice_cmu_us_slt_hts_plugin_init();
+  voice_cmu_us_rms_plugin_init();
+  voice_cmu_us_slt_hts_plugin_init();
   voice_vid_gb_ap_plugin_init();
   return 0;
 }
@@ -76,8 +76,8 @@ int mimic_builtin_plugins_init()
 void mimic_builtin_plugins_exit()
 {
   voice_cmu_us_awb_plugin_exit();
-  //voice_cmu_us_rms_plugin_exit();
-  //voice_cmu_us_slt_hts_plugin_exit();
+  voice_cmu_us_rms_plugin_exit();
+  voice_cmu_us_slt_hts_plugin_exit();
   voice_vid_gb_ap_plugin_exit();
   voice_cmu_us_kal16_plugin_exit();
   voice_cmu_us_kal_plugin_exit();

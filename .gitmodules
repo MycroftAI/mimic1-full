@@ -28,3 +28,9 @@
 [submodule "subprojects/mimic-cmu_us_kal16"]
 	path = subprojects/mimic-cmu_us_kal16
 	url = https://github.com/zeehio/mimic-cmu_us_kal16.git
+[submodule "subprojects/mimic-cmu_us_rms"]
+	path = subprojects/mimic-cmu_us_rms
+	url = https://github.com/zeehio/mimic-cmu_us_rms.git
+[submodule "subprojects/mimic-cmu_us_slt_hts"]
+	path = subprojects/mimic-cmu_us_slt_hts
+	url = https://github.com/zeehio/mimic-cmu_us_slt_hts.git
