@@ -2,18 +2,39 @@ project('mimic-full', 'c', default_options : ['c_std=c99'], version: '2.0.0')
 
 c_compiler = meson.get_compiler('c')
 
-mimic_core = dependency('ttsmimic_core')
-mimic_full_deps = [mimic_core]
 
-foreach lang : ['english']
-  mimic_full_deps += dependency('ttsmimic_' + lang)
+includes = []
+mimic_full_deps = []
+
+mimic_modules = ['core', 'english', 'grapheme', 'indic']
+
+foreach mimic_module : mimic_modules
+  dep = dependency('ttsmimic_' + mimic_module, required: false)
+  if not dep.found()
+    # We compile it:
+    dep_sub = subproject('mimic-@0@'.format(mimic_module))
+    dep = dep_sub.get_variable('ttsmimic_@0@_dep'.format(mimic_module))
+    includes += dep_sub.get_variable('includes')
+  endif
+  mimic_full_deps += dep
 endforeach
 
-foreach voice : ['cmu_us_slt'] # 'vid_gb_ap']
-  mimic_full_deps += dependency('ttsmimic_' + voice)
+mimic_voices = ['cmu_us_slt', 'vid_gb_ap']
+
+foreach mimic_voice : mimic_voices
+  dep = dependency('ttsmimic_' + mimic_voice, required: false)
+  if not dep.found()
+    # We compile it:
+    dep_sub = subproject('mimic-@0@'.format(mimic_voice))
+    dep = dep_sub.get_variable('voice_dep')
+    includes += dep_sub.get_variable('includes')
+  endif
+  mimic_full_deps += dep
 endforeach
 
-includes = [
+
+
+includes += [
   include_directories('include')
 ]
 

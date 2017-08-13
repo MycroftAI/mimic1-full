@@ -1,0 +1,4 @@
+[wrap-git]
+directory=mimic-grapheme
+url=https://github.com/zeehio/mimic-grapheme.git
+revision=2d84e31bee3522ef5590b304f3942808f888849b

@@ -1,0 +1,4 @@
+[wrap-git]
+directory=mimic-indic
+url=https://github.com/zeehio/mimic-indic.git
+revision=2b7931f4bed5f7d5e88d57cd3a2c3cefbc93a6d7
