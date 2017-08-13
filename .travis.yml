@@ -28,7 +28,8 @@ matrix:
         - pip3 install meson
       script:
         - meson build --prefix="$PWD/install" -D b_coverage=true
-        - ninja -C build test install
+        - ninja -C build test
+        - cd build && ./mimic-full -t "hello world" hello_world.wav
       after_success:
         - bash <(curl -s https://codecov.io/bash)
       addons: {apt: {packages: [libasound2-dev, python3-pip, pkg-config]}}
