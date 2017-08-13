@@ -20,7 +20,7 @@ matrix:
         - brew install python3 ninja pkg-config; echo "done"
         - pip3 install meson
       script:
-        - meson build --prefix="$PWD/install" --cross-file="subprojects/mimic-core/cross/iphone.txt"
+        - meson build --prefix="$PWD/install" --cross-file="$PWD/subprojects/mimic-core/cross/iphone.txt"
         - ninja -C build install
     - env: TASK="linux"
       os: linux
