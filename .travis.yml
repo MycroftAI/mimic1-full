@@ -19,6 +19,19 @@ matrix:
         - wget https://github.com/ninja-build/ninja/releases/download/v1.7.2/ninja-linux.zip && unzip -q ninja-linux.zip -d build
         - pip3 install meson
       addons: {apt: {packages: [libasound2-dev, python3-pip, pkg-config]}}
+    - env: TASK="coverage"
+      os: linux
+      dist: "trusty"
+      install:
+        - export PATH="`pwd`/build:${PATH}"
+        - wget https://github.com/ninja-build/ninja/releases/download/v1.7.2/ninja-linux.zip && unzip -q ninja-linux.zip -d build
+        - pip3 install meson
+      script:
+        - meson build --prefix="$PWD/install" -D b_coverage=true
+        - ninja -C build test install
+      after_success:
+        - bash <(curl -s https://codecov.io/bash)
+      addons: {apt: {packages: [libasound2-dev, python3-pip, pkg-config]}}
     - env: TASK="windows"
       os: linux
       dist: "trusty"
