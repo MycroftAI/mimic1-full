@@ -29,7 +29,7 @@ matrix:
       script:
         - meson build --prefix="$PWD/install" --cross-file="subprojects/mimic-core/cross/ubuntu-mingw64.txt"
         - ninja -C build install
-      addons: {apt: {packages: [python3-pip, pkg-config, wine, binutils-mingw-w64-x86-64, mingw-w64-x86-64-dev, gcc-mingw-x86-64-i686]}}
+      addons: {apt: {packages: [python3-pip, pkg-config, wine, binutils-mingw-w64-x86-64, mingw-w64-x86-64-dev, gcc-mingw-w64-x86-64]}}
 
 # We don't want to pull submodules recursively
 git:
