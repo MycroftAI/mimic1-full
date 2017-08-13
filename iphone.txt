@@ -3,7 +3,7 @@
 # these might not work for you. Use the googels and xcrun.
 
 [binaries]
-c = 'clang'
+c = 'xcrun'
 cpp = 'clang++'
 ar = 'ar'
 strip = 'strip'
@@ -11,10 +11,8 @@ strip = 'strip'
 [properties]
 root = '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer'
 
-c_args = ['-arch', 'armv7', '-miphoneos-version-min=8.0', '-isysroot', '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk']
-cpp_args = ['-arch', 'armv7', '-miphoneos-version-min=8.0', '-isysroot', '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk']
-c_link_args = ['-arch', 'armv7', '-miphoneos-version-min=8.0', '-isysroot', '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk']
-cpp_link_args = ['-arch', 'armv7', '-miphoneos-version-min=8.0', '-isysroot', '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk']
+c_args = ['-sdk', 'iphoneos', 'clang', '-arch', 'armv7', '-miphoneos-version-min=5.0', '-Ofast']
+c_link_args = ['-sdk', 'iphoneos', 'clang', '-arch', 'armv7', '-miphoneos-version-min=5.0', '-flto']
 
 [host_machine]
 system = 'darwin'
