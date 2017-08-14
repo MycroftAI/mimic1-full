@@ -57,15 +57,29 @@
 
 #include "vid_gb_ap.h"
 
+#if defined(MIMIC_SPANISH)
+  #include "es_lang.h"
+#endif
+
+#if defined(MIMIC_CSTR_UPC_UPM_SPANISH_HTS)
+  #include "cstr_upc_upm_spanish_hts.h"
+#endif
+
 int mimic_builtin_plugins_init()
 {
   usenglish_plugin_init();
   indic_plugin_init();
   grapheme_plugin_init();
+  #if defined(MIMIC_SPANISH)
+  es_plugin_init();
+  #endif
   voice_cmu_us_slt_plugin_init();
   voice_cmu_time_awb_plugin_init();
   voice_cmu_us_kal_plugin_init();
   voice_cmu_us_kal16_plugin_init();
+  #if defined(MIMIC_CSTR_UPC_UPM_SPANISH_HTS)
+  voice_cstr_upc_upm_spanish_hts_plugin_init();
+  #endif
   voice_cmu_us_awb_plugin_init();
   voice_cmu_us_rms_plugin_init();
   voice_cmu_us_slt_hts_plugin_init();
@@ -79,10 +93,16 @@ void mimic_builtin_plugins_exit()
   voice_cmu_us_rms_plugin_exit();
   voice_cmu_us_slt_hts_plugin_exit();
   voice_vid_gb_ap_plugin_exit();
+  #if defined(MIMIC_CSTR_UPC_UPM_SPANISH_HTS)
+  voice_cstr_upc_upm_spanish_hts_plugin_exit();
+  #endif
   voice_cmu_us_kal16_plugin_exit();
   voice_cmu_us_kal_plugin_exit();
   voice_cmu_time_awb_plugin_exit();
   voice_cmu_us_slt_plugin_exit();
+  #if defined(MIMIC_SPANISH)
+  es_plugin_exit();
+  #endif
   grapheme_plugin_exit();
   indic_plugin_exit();
   usenglish_plugin_exit();

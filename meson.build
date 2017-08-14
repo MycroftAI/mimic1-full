@@ -7,6 +7,13 @@ includes = []
 mimic_full_deps = []
 
 mimic_modules = ['core', 'english', 'grapheme', 'indic']
+mimic_defines = []
+gpl = get_option('gpl')
+
+if gpl == true
+  mimic_modules += ['spanish']
+  mimic_defines += ['-DMIMIC_SPANISH']
+endif
 
 foreach mimic_module : mimic_modules
   dep = dependency('ttsmimic_' + mimic_module, required: false)
@@ -22,6 +29,12 @@ endforeach
 mimic_voices = ['cmu_us_slt', 'vid_gb_ap', 'cmu_time_awb',
                 'cmu_us_awb', 'cmu_us_kal', 'cmu_us_kal16',
                 'cmu_us_rms', 'cmu_us_slt_hts']
+
+if gpl == true
+  mimic_voices += ['cstr_upc_upm_spanish_hts']
+  mimic_defines += ['-DMIMIC_CSTR_UPC_UPM_SPANISH_HTS']
+endif
+
 
 foreach mimic_voice : mimic_voices
   dep = dependency('ttsmimic_' + mimic_voice, required: false)
@@ -46,5 +59,6 @@ dl_dep = c_compiler.find_library('dl', required: false)
 
 executable('mimic-full', ['src/mimic_main.c', 'src/cst_builtin_plugins.c'],
            include_directories: includes,
+           c_args : mimic_defines,
            install: true,
            dependencies: [mimic_full_deps, m_dep, dl_dep])

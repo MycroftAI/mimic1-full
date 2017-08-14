@@ -34,3 +34,9 @@
 [submodule "subprojects/mimic-cmu_us_slt_hts"]
 	path = subprojects/mimic-cmu_us_slt_hts
 	url = https://github.com/zeehio/mimic-cmu_us_slt_hts.git
+[submodule "subprojects/mimic-cstr_upc_upm_spanish_hts"]
+	path = subprojects/mimic-cstr_upc_upm_spanish_hts
+	url = https://github.com/zeehio/mimic-cstr_upc_upm_spanish_hts.git
+[submodule "subprojects/mimic-spanish"]
+	path = subprojects/mimic-spanish
+	url = https://github.com/zeehio/mimic-spanish.git

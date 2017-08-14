@@ -1,0 +1,4 @@
+option('gpl', type : 'boolean', value : false,
+       description: 'Build GPL plugins. With this switch mimic-full becomes GPL and mimic as well, if the plugins are installed')
+
+
