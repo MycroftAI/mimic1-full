@@ -1,0 +1,5 @@
+[wrap-git]
+directory=saga
+url=https://github.com/TALP-UPC/saga.git
+revision=920a0ab4ef5f287f7521dee190a301b7f2feca37
+
