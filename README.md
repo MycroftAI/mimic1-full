@@ -42,7 +42,13 @@ pip3 install --user meson
 git clone https://github.com/zeehio/mimic-full.git
 cd mimic-full
 git submodule update --init
+# If you want to download and install GPL resources, making mimic GPL:
+meson builddir --prefix="$PWD/install_dir" -Dgpl=true
+# Otherwise you can keep a BSD-like mimic:
 meson builddir --prefix="$PWD/install_dir"
+# Compile, on memory limited systems: (reduce parallelization with -j NCORES)
+ninja -j2 -C builddir test install
+# Compile on conventional systems:
 ninja -C builddir test install
 ```
 
