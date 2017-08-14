@@ -35,13 +35,6 @@
  /* This links all the builtin languages and voices, when they are
   * not used as cst_plugins */
 
-#include "mimic_core_config.h"
-#include "mimic_english_config.h"
-#include "mimic_indic_config.h"
-#include "mimic_grapheme_config.h"
-#include "mimic_cmu_time_awb_config.h"
-#include "mimic_cmu_us_slt_config.h"
-#include "mimic_vid_gb_ap_config.h"
 #include "mimic.h"
 
 #include "usenglish.h"
