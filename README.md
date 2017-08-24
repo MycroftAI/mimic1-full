@@ -39,9 +39,9 @@ pip3 install --user meson
 ### Installation instructions
 
 ```
-git clone https://github.com/zeehio/mimic-full.git
+git clone https://github.com/MycroftAI/mimic-full.git
 cd mimic-full
-git submodule update --init
+git submodule init
 # If you want to download and install GPL resources, making mimic GPL:
 meson builddir --prefix="$PWD/install_dir" -Dgpl=true
 # Otherwise you can keep a BSD-like mimic:

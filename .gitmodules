@@ -1,42 +1,68 @@
 [submodule "mimic-core"]
 	path = subprojects/mimic-core
-	url = https://github.com/zeehio/mimic-core.git
+	url = https://github.com/MycroftAI/mimic-core.git
+	branch = development
 [submodule "mimic-english"]
 	path = subprojects/mimic-english
-	url = https://github.com/zeehio/mimic-english.git
+	url = https://github.com/MycroftAI/mimic-english.git
+	branch = development
 [submodule "mimic-cmu_us_slt"]
 	path = subprojects/mimic-cmu_us_slt
-	url = https://github.com/zeehio/mimic-cmu_us_slt.git
+	url = https://github.com/MycroftAI/mimic-cmu_us_slt.git
+	branch = development
 [submodule "mimic-vid_gb_ap"]
 	path = subprojects/mimic-vid_gb_ap
-	url = https://github.com/zeehio/mimic-vid_gb_ap.git
+	url = https://github.com/MycroftAI/mimic-vid_gb_ap.git
+	branch = development
 [submodule "mimic-indic"]
 	path = subprojects/mimic-indic
-	url = https://github.com/zeehio/mimic-indic.git
+	url = https://github.com/MycroftAI/mimic-indic.git
+	branch = development
 [submodule "mimic-grapheme"]
 	path = subprojects/mimic-grapheme
-	url = https://github.com/zeehio/mimic-grapheme.git
+	url = https://github.com/MycroftAI/mimic-grapheme.git
+	branch = development
 [submodule "subprojects/mimic-cmu_time_awb"]
 	path = subprojects/mimic-cmu_time_awb
-	url = https://github.com/zeehio/mimic-cmu_time_awb.git
+	url = https://github.com/MycroftAI/mimic-cmu_time_awb.git
+	branch = development
 [submodule "subprojects/mimic-cmu_us_awb"]
 	path = subprojects/mimic-cmu_us_awb
-	url = https://github.com/zeehio/mimic-cmu_us_awb.git
+	url = https://github.com/MycroftAI/mimic-cmu_us_awb.git
+	branch = development
 [submodule "subprojects/mimic-cmu_us_kal"]
 	path = subprojects/mimic-cmu_us_kal
-	url = https://github.com/zeehio/mimic-cmu_us_kal.git
+	url = https://github.com/MycroftAI/mimic-cmu_us_kal.git
+	branch = development
 [submodule "subprojects/mimic-cmu_us_kal16"]
 	path = subprojects/mimic-cmu_us_kal16
-	url = https://github.com/zeehio/mimic-cmu_us_kal16.git
+	url = https://github.com/MycroftAI/mimic-cmu_us_kal16.git
+	branch = development
 [submodule "subprojects/mimic-cmu_us_rms"]
 	path = subprojects/mimic-cmu_us_rms
-	url = https://github.com/zeehio/mimic-cmu_us_rms.git
+	url = https://github.com/MycroftAI/mimic-cmu_us_rms.git
+	branch = development
 [submodule "subprojects/mimic-cmu_us_slt_hts"]
 	path = subprojects/mimic-cmu_us_slt_hts
-	url = https://github.com/zeehio/mimic-cmu_us_slt_hts.git
+	url = https://github.com/MycroftAI/mimic-cmu_us_slt_hts.git
+	branch = development
 [submodule "subprojects/mimic-cstr_upc_upm_spanish_hts"]
 	path = subprojects/mimic-cstr_upc_upm_spanish_hts
-	url = https://github.com/zeehio/mimic-cstr_upc_upm_spanish_hts.git
+	url = https://github.com/MycroftAI/mimic-cstr_upc_upm_spanish_hts.git
+	branch = development
 [submodule "subprojects/mimic-spanish"]
 	path = subprojects/mimic-spanish
-	url = https://github.com/zeehio/mimic-spanish.git
+	url = https://github.com/MycroftAI/mimic-spanish.git
+	branch = development
+[submodule "subprojects/HTSEngine"]
+	path = subprojects/HTSEngine
+	url = https://github.com/MycroftAI/htsengine_meson.git
+	branch = master
+[submodule "subprojects/saga"]
+	path = subprojects/saga
+	url = https://github.com/TALP-UPC/saga
+	branch = master
+[submodule "subprojects/pcre2"]
+	path = subprojects/pcre2
+	url = https://github.com/MycroftAI/pcre2_meson
+	branch = 10.23
