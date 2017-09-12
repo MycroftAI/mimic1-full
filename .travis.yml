@@ -10,14 +10,14 @@ matrix:
       install:
         - brew update
         - brew install python3 ninja pkg-config pcre2 portaudio; echo "done"
-        - pip3 install meson
+        - pip3 install --user meson
     - env: TASK="linux"
       os: linux
       dist: "trusty"
       install:
         - export PATH="`pwd`/build:${PATH}"
         - wget https://github.com/ninja-build/ninja/releases/download/v1.7.2/ninja-linux.zip && unzip -q ninja-linux.zip -d build
-        - pip3 install meson
+        - pip3 install --user meson
       addons: {apt: {packages: [libasound2-dev, python3-pip, pkg-config]}}
     - env: TASK="coverage"
       os: linux
@@ -25,7 +25,7 @@ matrix:
       install:
         - export PATH="`pwd`/build:${PATH}"
         - wget https://github.com/ninja-build/ninja/releases/download/v1.7.2/ninja-linux.zip && unzip -q ninja-linux.zip -d build
-        - pip3 install meson
+        - pip3 install --user meson
       script:
         - meson build --prefix="$PWD/install" -D b_coverage=true
         - ninja -C build test
@@ -39,7 +39,7 @@ matrix:
       install:
         - export PATH="`pwd`/build:${PATH}"
         - wget https://github.com/ninja-build/ninja/releases/download/v1.7.2/ninja-linux.zip && unzip -q ninja-linux.zip -d build
-        - pip3 install meson
+        - pip3 install --user meson
       script:
         - meson build --prefix="$PWD/install" --cross-file="subprojects/mimic-core/cross/ubuntu-mingw64.txt"
         - ninja -C build install
@@ -50,7 +50,7 @@ matrix:
       install:
         - export PATH="`pwd`/build:${PATH}"
         - wget https://github.com/ninja-build/ninja/releases/download/v1.7.2/ninja-linux.zip && unzip -q ninja-linux.zip -d build
-        - pip3 install meson
+        - pip3 install --user meson
       script:
         - meson build --prefix="$PWD/install" --cross-file="subprojects/mimic-core/cross/ubuntu-armhf.txt"
         - ninja -C build install
