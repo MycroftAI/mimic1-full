@@ -66,3 +66,11 @@
 	path = subprojects/pcre2
 	url = https://github.com/MycroftAI/pcre2_meson
 	branch = 10.23
+[submodule "subprojects/mimic-french"]
+	path = subprojects/mimic-french
+	url = https://github.com/MycroftAI/mimic-french
+	branch = development
+[submodule "subprojects/mimic-siwis_fr_zoe_hts"]
+	path = subprojects/mimic-siwis_fr_zoe_hts
+	url = https://github.com/MycroftAI/mimic-siwis_fr_zoe_hts
+	branch = development
