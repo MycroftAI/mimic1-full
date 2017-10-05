@@ -58,6 +58,10 @@
   #include "cstr_upc_upm_spanish_hts.h"
 #endif
 
+#include "fr_lang.h"
+#include "siwis_fr_zoe_hts.h"
+
+
 int mimic_builtin_plugins_init()
 {
   usenglish_plugin_init();
@@ -66,6 +70,7 @@ int mimic_builtin_plugins_init()
   #if defined(MIMIC_SPANISH)
   es_plugin_init();
   #endif
+  fr_plugin_init();
   voice_cmu_us_slt_plugin_init();
   voice_cmu_time_awb_plugin_init();
   voice_cmu_us_kal_plugin_init();
@@ -73,6 +78,7 @@ int mimic_builtin_plugins_init()
   #if defined(MIMIC_CSTR_UPC_UPM_SPANISH_HTS)
   voice_cstr_upc_upm_spanish_hts_plugin_init();
   #endif
+  voice_siwis_fr_zoe_hts_plugin_init();
   voice_cmu_us_awb_plugin_init();
   voice_cmu_us_rms_plugin_init();
   voice_cmu_us_slt_hts_plugin_init();
@@ -86,6 +92,7 @@ void mimic_builtin_plugins_exit()
   voice_cmu_us_rms_plugin_exit();
   voice_cmu_us_slt_hts_plugin_exit();
   voice_vid_gb_ap_plugin_exit();
+  voice_siwis_fr_zoe_hts_plugin_exit();
   #if defined(MIMIC_CSTR_UPC_UPM_SPANISH_HTS)
   voice_cstr_upc_upm_spanish_hts_plugin_exit();
   #endif
@@ -93,6 +100,7 @@ void mimic_builtin_plugins_exit()
   voice_cmu_us_kal_plugin_exit();
   voice_cmu_time_awb_plugin_exit();
   voice_cmu_us_slt_plugin_exit();
+  fr_plugin_exit();
   #if defined(MIMIC_SPANISH)
   es_plugin_exit();
   #endif

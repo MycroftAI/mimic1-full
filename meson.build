@@ -6,7 +6,7 @@ c_compiler = meson.get_compiler('c')
 includes = []
 mimic_full_deps = []
 
-mimic_modules = ['core', 'english', 'grapheme', 'indic']
+mimic_modules = ['core', 'english', 'grapheme', 'indic', 'french']
 mimic_defines = []
 gpl = get_option('gpl')
 
@@ -28,7 +28,7 @@ endforeach
 
 mimic_voices = ['cmu_us_slt', 'vid_gb_ap', 'cmu_time_awb',
                 'cmu_us_awb', 'cmu_us_kal', 'cmu_us_kal16',
-                'cmu_us_rms', 'cmu_us_slt_hts']
+                'cmu_us_rms', 'cmu_us_slt_hts', 'siwis_fr_zoe_hts']
 
 if gpl == true
   mimic_voices += ['cstr_upc_upm_spanish_hts']
